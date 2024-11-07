@@ -1,0 +1,17 @@
+{
+  "name": "ucse-examen-backend",
+  "version": "1.0.0",
+  "description": "En este examen, deberás desarrollar una **API RESTful** usando **Express** y **MongoDB** para gestionar un catálogo de trailers de series y películas. La API permitirá realizar operaciones de Crear, Leer, Eliminar sobre una colección de trailers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "mongoose": "^8.8.0"
+  }
+}

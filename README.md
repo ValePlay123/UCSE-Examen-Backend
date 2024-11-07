@@ -96,3 +96,90 @@ La API deberá incluir las siguientes operaciones:
    git commit -m "Implementación de funcionalidades y documentación"
    git push origin main
    ```
+
+Aquí tienes una versión más sencilla y resumida de la documentación de la API para la gestión de trailers:
+
+---
+
+# Documentación API de Trailers
+
+Esta API permite gestionar trailers con operaciones para obtener, buscar, agregar, actualizar y eliminar trailers en la base de datos.
+
+# Endpoints
+
+# 1. Obtener todos los trailers
+- **Ruta:** `GET /api/trailer`
+- **Descripción:** Devuelve todos los trailers.
+- **Ejemplo:** 
+  ```
+  GET http://localhost:3000/api/trailer
+  ```
+
+# 2. Obtener trailer por ID
+- **Ruta:** `GET /api/trailer/:id`
+- **Descripción:** Devuelve un trailer específico por su ID.
+- **Ejemplo:** 
+  ```
+  GET http://localhost:3000/api/trailer/3
+  ```
+- **Error si no existe:** 
+  ```json
+  { "message": "Trailer no encontrado" }
+  ```
+
+# 3. Filtrar trailers por género
+- **Ruta:** `GET /api/trailer/search/genero`
+- **Descripción:** Filtra trailers por género.
+- **Parámetro:** `genero` (por ejemplo, `Drama`)
+- **Ejemplo:** 
+  ```
+  GET http://localhost:3000/api/trailer/search/genero?genero=Drama
+  ```
+
+# 4. Buscar trailers por actor
+- **Ruta:** `GET /api/trailer/search/actor`
+- **Descripción:** Filtra trailers que incluyen al actor especificado.
+- **Parámetro:** `actor` (por ejemplo, `Pedro Pascal`)
+- **Ejemplo:** 
+  ```
+  GET http://localhost:3000/api/trailer/search/actor?actor=Pedro+Pascal
+  ```
+
+# 5. Agregar un nuevo trailer
+- **Ruta:** `POST /api/trailer`
+- **Descripción:** Agrega un nuevo trailer.
+- **Cuerpo:** Información del trailer en formato JSON.
+- **Ejemplo:** 
+  ```json
+  {
+    "titulo": "The Mandalorian",
+    "genero": ["Sci-Fi", "Fantasía"],
+    "reparto": ["Pedro Pascal"]
+  }
+  ```
+
+# 6. Actualizar un trailer
+- **Ruta:** `PUT /api/trailer/:id`
+- **Descripción:** Actualiza los datos de un trailer por ID.
+- **Ejemplo:** 
+  ```json
+  {
+    "titulo": "Nuevo título"
+  }
+  ```
+- **Error si no existe:** 
+  ```json
+  { "message": "Trailer no encontrado" }
+  ```
+
+# 7. Eliminar un trailer
+- **Ruta:** `DELETE /api/trailer/:id`
+- **Descripción:** Elimina un trailer por ID.
+- **Ejemplo:** 
+  ```
+  DELETE http://localhost:3000/api/trailer/3
+  ```
+- **Respuesta exitosa:**
+  ```json
+  { "message": "Trailer eliminado correctamente" }
+  ```

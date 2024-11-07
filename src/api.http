@@ -1,25 +1,28 @@
 ###
 
-# Filtrar trailers por género
-GET http://localhost:3000/api/trailers?genero=Drama
+### Obtener todos los trailers
+GET http://localhost:3000/trailer
+
+### Filtrar trailers por género
+GET http://localhost:3000/trailer?genero=Drama
 Accept: application/json
 
 ###
 
 # Buscar trailers por actor
-GET http://localhost:3000/api/trailers?actor=Helena Bonham Carter
+GET http://localhost:3000/trailers?actor=Helena Bonham Carter
 Accept: application/json
 
 ###
 
 # Obtener series con más de X temporadas
-GET http://localhost:3000/api/trailers?minTemporadas=3
+GET http://localhost:3000/trailers?minTemporadas=3
 Accept: application/json
 
 ###
 
 # Crear un nuevo trailer
-POST http://localhost:3000/api/trailers
+POST http://localhost:3000/trailer
 Content-Type: application/json
 
 {
@@ -34,11 +37,12 @@ Content-Type: application/json
 ###
 
 # Eliminar un trailer
-DELETE http://localhost:3000/api/trailers/1
+DELETE http://localhost:3000/trailer/672d121660198dc71f8906ec
 Accept: application/json
 
 ###
 
 # Manejo de error - Trailer no encontrado
-GET http://localhost:3000/api/trailers/9999
+GET http://localhost:3000/trailer/9999
 Accept: application/json
+
